@@ -2,6 +2,8 @@ import img from "./assets/react-core-concepts.png";
 import imgComponent from "./assets/components.png";
 import imgComponent1 from "./assets/state-mgmt.png";
 
+import { CORE_CONCEPTS } from "./data";
+
 const reactDescriptions = ["Super", "Awesome", "Cool", "Good", "Great"];
 
 function getRandomReactDescription() {
@@ -57,6 +59,13 @@ function App() {
 			description='React is a JavaScript library for building user interfaces 1.'
 			image={imgComponent1}
 		/>
+		{CORE_CONCEPTS.map((concept) => (
+			<CoreConcepts
+				title={concept.title}
+				description={concept.description}
+				image={concept.image}
+			/>
+		))}
 	</div>
 	);
 }
