@@ -1,4 +1,4 @@
-import img from "../assets/react-core-concepts.png";
+import img from "../../assets/react-core-concepts.png";
 import "./Header.css";
 const reactDescriptions = ["Super", "Awesome", "Cool", "Good", "Great"];
 

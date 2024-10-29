@@ -1,7 +1,7 @@
 
 import imgComponent from "./assets/components.png";
 import imgComponent1 from "./assets/state-mgmt.png";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import CoreConcepts from "./components/CoreConcepts";
 
 import { CORE_CONCEPTS } from "./data";
