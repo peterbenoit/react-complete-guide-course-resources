@@ -24,24 +24,25 @@ function Header() {
 	);
 }
 
+// destructuring props
 // function CoreConcepts( { title, description, image } ) {
 // 	return (
-// 		<main>
+// 		<li>
 // 			<h2>{title}</h2>
 // 			<img src={image} alt="Components" />
 // 			<p>{description}</p>
-// 		</main>
+// 		</li>
 // 	);
 // }
 
 // using 'props' as the object to derive the values, but it can be any word
 function CoreConcepts(props) {
 	return (
-		<main>
+		<li>
 			<h2>{props.title}</h2>
 			<img src={props.image} alt="Components" />
 			<p>{props.description}</p>
-		</main>
+		</li>
 	);
 }
 
@@ -49,23 +50,33 @@ function App() {
 	return (
 	<div>
 		<Header />
-		<CoreConcepts
-			title='Core Concepts'
-			description='React is a JavaScript library for building user interfaces.'
-			image={imgComponent}
-		/>
-		<CoreConcepts
-			title='Core Concepts 1'
-			description='React is a JavaScript library for building user interfaces 1.'
-			image={imgComponent1}
-		/>
-		{CORE_CONCEPTS.map((concept) => (
-			<CoreConcepts
-				title={concept.title}
-				description={concept.description}
-				image={concept.image}
-			/>
-		))}
+		<main>
+			<section id="core-concepts">
+				<h2>Core Concepts</h2>
+				<ul>
+					<CoreConcepts
+						title='Core Concepts'
+						description='React is a JavaScript library for building user interfaces.'
+						image={imgComponent}
+					/>
+					<CoreConcepts
+						title='Core Concepts 1'
+						description='React is a JavaScript library for building user interfaces 1.'
+						image={imgComponent1}
+					/>
+					{CORE_CONCEPTS.map((concept) => (
+						<CoreConcepts
+							title={concept.title}
+							description={concept.description}
+							image={concept.image}
+						/>
+					))}
+					<CoreConcepts
+						{...CORE_CONCEPTS[0]}
+					/>
+				</ul>
+			</section>
+		</main>
 	</div>
 	);
 }
