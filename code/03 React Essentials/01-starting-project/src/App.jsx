@@ -22,12 +22,23 @@ function Header() {
 	);
 }
 
-function CoreConcepts( { title, description, image } ) {
+// function CoreConcepts( { title, description, image } ) {
+// 	return (
+// 		<main>
+// 			<h2>{title}</h2>
+// 			<img src={image} alt="Components" />
+// 			<p>{description}</p>
+// 		</main>
+// 	);
+// }
+
+// using 'props' as the object to derive the values, but it can be any word
+function CoreConcepts(props) {
 	return (
 		<main>
-			<h2>{title}</h2>
-			<img src={image} alt="Components" />
-			<p>{description}</p>
+			<h2>{props.title}</h2>
+			<img src={props.image} alt="Components" />
+			<p>{props.description}</p>
 		</main>
 	);
 }
