@@ -1,4 +1,4 @@
-import { CORE_CONCEPTS } from "../data";
+import "./CoreConcepts.css";
 
 // destructuring props
 // function CoreConcepts( { title, description, image } ) {
@@ -12,7 +12,7 @@ import { CORE_CONCEPTS } from "../data";
 // }
 
 // using 'props' as the object to derive the values, but it can be any word
-function CoreConcepts(props) {
+export default function CoreConcepts(props) {
 	return (
 		<li>
 			<h2>{props.title}</h2>

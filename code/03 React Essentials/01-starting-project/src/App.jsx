@@ -4,7 +4,7 @@ import imgComponent1 from "./assets/state-mgmt.png";
 import Header from "./components/Header";
 import CoreConcepts from "./components/CoreConcepts";
 
-
+import { CORE_CONCEPTS } from "./data";
 
 function App() {
 	return (
