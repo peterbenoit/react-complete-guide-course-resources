@@ -1,4 +1,6 @@
 import img from "./assets/react-core-concepts.png";
+import imgComponent from "./assets/components.png";
+import imgComponent1 from "./assets/state-mgmt.png";
 
 const reactDescriptions = ["Super", "Awesome", "Cool", "Good", "Great"];
 
@@ -20,13 +22,30 @@ function Header() {
 	);
 }
 
+function CoreConcepts( { title, description, image } ) {
+	return (
+		<main>
+			<h2>{title}</h2>
+			<img src={image} alt="Components" />
+			<p>{description}</p>
+		</main>
+	);
+}
+
 function App() {
 	return (
 	<div>
 		<Header />
-		<main>
-		<h2>Time to get started!</h2>
-		</main>
+		<CoreConcepts
+			title='Core Concepts'
+			description='React is a JavaScript library for building user interfaces.'
+			image={imgComponent}
+		/>
+		<CoreConcepts
+			title='Core Concepts 1'
+			description='React is a JavaScript library for building user interfaces 1.'
+			image={imgComponent1}
+		/>
 	</div>
 	);
 }
