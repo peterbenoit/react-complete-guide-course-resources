@@ -8,8 +8,11 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/Header/TabButton";
 
 function App() {
-	function handleSelect(e) {
+	function handleSelectByInnerText(e) {
 		console.log(e.target.innerText);
+	}
+	function handleSelectByValue(value) {
+		console.log(value);
 	}
 	return (
 	<div>
@@ -43,10 +46,10 @@ function App() {
 			<section id="examples">
 				<h2>Examples</h2>
 				<menu>
-					<TabButton active onClick={handleSelect}>JSX</TabButton>
-					<TabButton onClick={handleSelect}>Components</TabButton>
-					<TabButton onClick={handleSelect}>Props</TabButton>
-					<TabButton onClick={handleSelect}>State</TabButton>
+					<TabButton active onClick={handleSelectByInnerText}>JSX</TabButton>
+					<TabButton onClick={handleSelectByInnerText}>Components</TabButton>
+					<TabButton onClick={handleSelectByInnerText}>Props</TabButton>
+					<TabButton onClick={() => handleSelectByValue('State')}>State</TabButton>
 				</menu>
 			</section>
 		</main>
