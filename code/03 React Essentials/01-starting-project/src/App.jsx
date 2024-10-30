@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 
 import imgComponent from "./assets/components.png";
 import imgComponent1 from "./assets/state-mgmt.png";
@@ -8,11 +10,18 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/Header/TabButton";
 
 function App() {
+	const stateArray = useState('JSX');
+	const [tabContent, setTabContent] = stateArray;
+
 	function handleSelectByInnerText(e) {
-		console.log(e.target.innerText);
+		// console.log(e.target.innerText);
+		// tabContent = e.target.innerText;
+		setTabContent(e.target.innerText);
 	}
 	function handleSelectByValue(value) {
-		console.log(value);
+		// console.log(value);
+		// tabContent = value;
+		setTabContent(value);
 	}
 	return (
 	<div>
@@ -51,6 +60,7 @@ function App() {
 					<TabButton onClick={handleSelectByInnerText}>Props</TabButton>
 					<TabButton onClick={() => handleSelectByValue('State')}>State</TabButton>
 				</menu>
+				{tabContent}
 			</section>
 		</main>
 	</div>
