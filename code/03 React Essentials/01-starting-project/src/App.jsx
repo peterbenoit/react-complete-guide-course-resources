@@ -6,22 +6,22 @@ import imgComponent1 from "./assets/state-mgmt.png";
 import Header from "./components/Header/Header";
 import CoreConcepts from "./components/CoreConcepts";
 
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import TabButton from "./components/Header/TabButton";
 
 function App() {
 	const stateArray = useState('JSX');
-	const [tabContent, setTabContent] = stateArray;
+	const [tabContent, setTabContent] = useState();
 
 	function handleSelectByInnerText(e) {
 		// console.log(e.target.innerText);
 		// tabContent = e.target.innerText;
-		setTabContent(e.target.innerText);
+		setTabContent(e.target.innerText.toLowerCase());
 	}
 	function handleSelectByValue(value) {
 		// console.log(value);
 		// tabContent = value;
-		setTabContent(value);
+		setTabContent(value.toLowerCase());
 	}
 	return (
 	<div>
@@ -60,7 +60,17 @@ function App() {
 					<TabButton onClick={handleSelectByInnerText}>Props</TabButton>
 					<TabButton onClick={() => handleSelectByValue('State')}>State</TabButton>
 				</menu>
-				{tabContent}
+				{ !tabContent ? (
+					<p>Please select an example.</p>
+				):(
+					<div id="tab-content">
+						<h3>{EXAMPLES[tabContent].title}</h3>
+						<p>{EXAMPLES[tabContent].description}</p>
+						<pre>
+							<code>{EXAMPLES[tabContent].code}</code>
+						</pre>
+					</div>
+				) }
 			</section>
 		</main>
 	</div>
