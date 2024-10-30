@@ -8,6 +8,9 @@ import { CORE_CONCEPTS } from "./data";
 import TabButton from "./components/Header/TabButton";
 
 function App() {
+	function handleSelect(e) {
+		console.log(e.target.innerText);
+	}
 	return (
 	<div>
 		<Header />
@@ -40,10 +43,10 @@ function App() {
 			<section id="examples">
 				<h2>Examples</h2>
 				<menu>
-					<TabButton active>JSX</TabButton>
-					<TabButton>Components</TabButton>
-					<TabButton>Props</TabButton>
-					<TabButton>State</TabButton>
+					<TabButton active onClick={handleSelect}>JSX</TabButton>
+					<TabButton onClick={handleSelect}>Components</TabButton>
+					<TabButton onClick={handleSelect}>Props</TabButton>
+					<TabButton onClick={handleSelect}>State</TabButton>
 				</menu>
 			</section>
 		</main>
