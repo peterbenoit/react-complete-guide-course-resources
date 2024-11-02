@@ -47,6 +47,14 @@ function App() {
 							image={concept.image}
 						/>
 					))}
+
+					{CORE_CONCEPTS.map((concept) => (
+						<CoreConcepts
+							key={concept.title}
+							{...concept}
+						/>
+					))}
+
 					<CoreConcepts
 						{...CORE_CONCEPTS[0]}
 					/>
