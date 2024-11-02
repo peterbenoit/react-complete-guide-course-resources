@@ -55,10 +55,10 @@ function App() {
 			<section id="examples">
 				<h2>Examples</h2>
 				<menu>
-					<TabButton active onClick={handleSelectByInnerText}>JSX</TabButton>
-					<TabButton onClick={handleSelectByInnerText}>Components</TabButton>
-					<TabButton onClick={handleSelectByInnerText}>Props</TabButton>
-					<TabButton onClick={() => handleSelectByValue('State')}>State</TabButton>
+					<TabButton active={tabContent === 'jsx'} onClick={handleSelectByInnerText}>JSX</TabButton>
+					<TabButton active={tabContent === 'components'} onClick={handleSelectByInnerText}>Components</TabButton>
+					<TabButton active={tabContent === 'props'} onClick={handleSelectByInnerText}>Props</TabButton>
+					<TabButton active={tabContent === 'state'} onClick={() => handleSelectByValue('State')}>State</TabButton>
 				</menu>
 				{ !tabContent ? (
 					<p>Please select an example.</p>
